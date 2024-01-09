@@ -12,7 +12,6 @@ export default {
     };
   },
   mounted() {
-    console.log(import.meta.env);
     const url = import.meta.env.VITE_PATH;
     this.axios.get(url)
       .then((res) => {
