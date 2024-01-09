@@ -1,4 +1,3 @@
-import './assets/main.css';
 // 載入 vue
 import { createApp } from 'vue';
 // 載入 Pinia
