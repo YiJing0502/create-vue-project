@@ -14,6 +14,7 @@ import router from './router';
 const app = createApp(App);
 
 app.use(createPinia());
+// 使用 router
 app.use(router);
 app.use(VueAxios, axios);
 
