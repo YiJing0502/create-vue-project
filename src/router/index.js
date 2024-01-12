@@ -79,6 +79,16 @@ const router = createRouter({
       name: 'guide',
       component: () => import('../views/RouteGuide.vue'),
     },
+    // 404
+    {
+      path: '/:pathMach(.*)*',
+      component: () => import('../views/NotFoundView.vue'),
+    },
+    // 重新導向
+    {
+      path: '/about/:pathMach(.*)*',
+      redirect: '/',
+    },
   ],
 });
 // 匯出給 main.js
