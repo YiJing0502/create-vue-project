@@ -1,22 +1,15 @@
 <script>
 import NavbarComponent from '../components/NavbarComponent.vue';
-import CartComponent from '../components/CartComponent.vue';
-import ProductListComponent from '../components/ProductListComponent.vue';
 
 export default {
   components: {
     NavbarComponent,
-    CartComponent,
-    ProductListComponent,
   },
 };
 </script>
 <template>
-  <div class="container">
     <NavbarComponent></NavbarComponent>
-    <CartComponent></CartComponent>
-    <ProductListComponent></ProductListComponent>
-  </div>
+    <router-view></router-view>
 </template>
 
 <style lang="scss">

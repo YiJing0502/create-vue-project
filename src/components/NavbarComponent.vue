@@ -1,11 +1,17 @@
 <template>
     <nav class="navbar bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">GLOW</span>
-        <button type="button" class="btn">
+        <router-link :to="{name: 'store-products'}" class="navbar-brand mb-0 h1">GLOW</router-link>
+        <router-link :to="{name: 'store-named-1'}" class="navbar-brand mb-0 h1">named1</router-link>
+        <router-link :to="{name: 'store-named-2'}" class="navbar-brand mb-0 h1">named2</router-link>
+        <router-link :to="{name: 'store-dynamic', params: {id: '611728268fcfd542'}}"
+         class="navbar-brand mb-0 h1">Dynamic</router-link>
+        <router-link :to="{name: 'store-dynamicByProps', params: {id: '611728268fcfd542'}}"
+         class="navbar-brand mb-0 h1">DynamicByProps</router-link>
+        <router-link :to="{name: 'store-cart'}" class="btn">
           購物車
           <span class="badge rounded-pill text-white bg-danger">{{cart.length}}</span>
-        </button>
+        </router-link>
       </div>
     </nav>
 </template>

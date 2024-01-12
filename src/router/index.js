@@ -23,8 +23,61 @@ const router = createRouter({
     },
     {
       path: '/store', // 第一層最前面請加入斜線
-      name: 'store',
+      name: 'store', // 给父路由起一个名字
       component: () => import('../views/StoreView.vue'),
+      children: [
+        {
+          path: '/products', // 斜線可加可不加
+          name: 'store-products', // 子路由的名字
+          component: () => import('../components/ProductListComponent.vue'),
+        },
+        {
+          path: '/dynamic/:id', // 斜線可加可不加
+          name: 'store-dynamic', // 子路由的名字
+          component: () => import('../views/DynamicRouterView.vue'),
+        },
+        {
+          path: '/dynamicByProps/:id', // 斜線可加可不加
+          name: 'store-dynamicByProps', // 子路由的名字
+          component: () => import('../views/DynamicRouterByPropsView.vue'),
+          props: (route) => ({
+            id: route.params.id,
+          }),
+        },
+        {
+          path: '/cart', // 斜線可加可不加
+          name: 'store-cart', // 子路由的名字
+          component: () => import('../components/CartComponent.vue'),
+        },
+        {
+          path: '/namedRouerViews',
+          name: 'store-named',
+          component: () => import('../views/NamedView.vue'),
+          children: [
+            {
+              path: '1',
+              name: 'store-named-1',
+              components: {
+                left: () => import('../components/CartComponent.vue'),
+                right: () => import('../components/ReceiptInformationComponent.vue'),
+              },
+            },
+            {
+              path: '2',
+              name: 'store-named-2',
+              components: {
+                left: () => import('../components/ProductListComponent.vue'),
+                right: () => import('../components/CartComponent.vue'),
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      path: '/guide',
+      name: 'guide',
+      component: () => import('../views/RouteGuide.vue'),
     },
   ],
 });
