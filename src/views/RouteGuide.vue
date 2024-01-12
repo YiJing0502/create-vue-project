@@ -17,30 +17,22 @@
 export default {
   methods: {
     getRoute() {
-      console.log('getRoute');
-      // 取得目前路由提供的相關資訊
-      // console.log(this.$route);
-      // console.log(this);
-      // 目前路由下可以使用的方法
-      console.log(this.$router);
+      // 取得目前路由提供的相關資訊 this.$route
+      // 目前路由下可以使用的方法 this.$router
     },
     push() {
-      console.log('push');
       this.$router.push({ name: 'store-products' });
     },
     replace() {
-      console.log('replace');
       this.$router.replace('/products');
     },
     go() {
-      console.log('go');
       this.$router.go(-1);
     },
     addRoute() {
-      console.log('addRoute');
       this.$router.addRoute({
-        path: '/newproducts', // 斜線可加可不加
-        name: 'newproducts', // 子路由的名字
+        path: '/newProducts', // 斜線可加可不加
+        name: 'newProducts', // 子路由的名字
         component: () => import('../components/ProductListComponent.vue'),
       });
     },

@@ -23,7 +23,6 @@ export default {
       .catch((err) => {
         [this.data] = err;
       });
-    console.log(this.id, 'props');
   },
 };
 </script>
